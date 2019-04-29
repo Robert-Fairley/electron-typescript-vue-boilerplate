@@ -1,0 +1,89 @@
+{
+  "name": "el-ts-v",
+  "version": "1.0.0",
+  "main": "dist/application.js",
+  "scripts": {
+    "serve:ui": "vue-cli-service serve",
+    "build:ui": "vue-cli-service build",
+    "lint:ui": "vue-cli-service lint",
+    "test:e2e": "vue-cli-service test:e2e",
+    "test:unit": "vue-cli-service test:unit",
+    "build:desktop": "tsc --build tsconfig.electron.config.json",
+    "build": "npm run build:ui && npm run build:desktop",
+    "start:desktop": "electron dist/application",
+    "start": "electron-forge start",
+    "package": "electron-forge package",
+    "make": "electron-forge make"
+  },
+  "keywords": [
+    "electron vue typescript",
+    "electron boilerplate",
+    "vue typescript",
+    "vue",
+    "typescript",
+    "starter",
+    "boilerplate"
+  ],
+  "author": {
+    "name": "Robert Fairley",
+    "email": "rrafairley@gmail.com"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "core-js": "^3.0.1",
+    "electron-squirrel-startup": "^1.0.0",
+    "vue": "^2.6.10",
+    "vue-class-component": "^7.0.2",
+    "vue-property-decorator": "^8.1.0"
+  },
+  "devDependencies": {
+    "@electron-forge/cli": "6.0.0-beta.34",
+    "@electron-forge/maker-deb": "6.0.0-beta.34",
+    "@electron-forge/maker-rpm": "6.0.0-beta.34",
+    "@electron-forge/maker-squirrel": "6.0.0-beta.34",
+    "@electron-forge/maker-zip": "6.0.0-beta.34",
+    "@types/chai": "^4.1.7",
+    "@types/mocha": "^5.2.6",
+    "@vue/cli-plugin-babel": "^3.7.0",
+    "@vue/cli-plugin-eslint": "^3.7.0",
+    "@vue/cli-plugin-typescript": "^3.7.0",
+    "@vue/cli-plugin-unit-mocha": "^3.7.0",
+    "@vue/cli-service": "^3.7.0",
+    "@vue/eslint-config-typescript": "^4.0.0",
+    "@vue/test-utils": "^1.0.0-beta.29",
+    "babel-eslint": "^10.0.1",
+    "chai": "^4.2.0",
+    "electron": "^5.0.0",
+    "eslint": "^5.16.0",
+    "eslint-plugin-vue": "^5.2.2",
+    "typescript": "^3.4.5",
+    "vue-template-compiler": "^2.6.10"
+  },
+  "config": {
+    "forge": {
+      "packagerConfig": {},
+      "makers": [
+        {
+          "name": "@electron-forge/maker-squirrel",
+          "config": {
+            "name": "el_ts_v"
+          }
+        },
+        {
+          "name": "@electron-forge/maker-zip",
+          "platforms": [
+            "darwin"
+          ]
+        },
+        {
+          "name": "@electron-forge/maker-deb",
+          "config": {}
+        },
+        {
+          "name": "@electron-forge/maker-rpm",
+          "config": {}
+        }
+      ]
+    }
+  }
+}

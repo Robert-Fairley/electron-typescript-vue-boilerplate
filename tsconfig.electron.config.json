@@ -1,0 +1,16 @@
+{
+    "compilerOptions": {
+        "target": "es2015",
+        "module": "commonjs",
+        "experimentalDecorators": true,
+        "lib": [ "es2018", "dom" ],
+        "outDir": "./dist"
+    },
+    "include": [
+        "src/desktop/**/*.ts"
+    ],
+    "exclude": [
+        "node_modules",
+        "dist"
+    ]
+}
